@@ -1,0 +1,1 @@
+///definir uma função significa colocar o código o que a função fará, chama-la se dá na execução do código, int main
