@@ -1,4 +1,4 @@
- // Filipe Gonçalves dos Santos
+// Filipe Gonçalves dos Santos
 // Filipe Guilherme Alves dos Santos
 // Ismael Batista da Silva
 // Julio Cesar
@@ -41,7 +41,7 @@ int main(void)
 
             for (linha = 0; linha < 3; linha++)
             {
-                printf("Sessao   ");
+                printf("Sessao  %d: ", linha + 1);
                 for (coluna = 0; coluna < 5; coluna++)
                 {
 
@@ -70,19 +70,45 @@ int main(void)
                 else
                 {
                     printf("Esse assento ja esta reservado!\n");
+                    continue;
                 }
             }
             else
             {
                 printf("Sessao ou assento invalido!\n");
             }
+            reserva++;
 
             break;
 
             break;
         case 3:
 
-            break;
+            printf("Em qual assento deseja cancelar a reserva: ");
+            scanf("%d", &linha);
+
+            printf("Em qual sessao deseja cancelar a reserva: ");
+            scanf("%d", &coluna);
+
+            if (linha >= 1 && linha <= 3 &&
+                coluna >= 1 && coluna <= 5)
+            {
+                if (assentos[linha - 1][coluna - 1] == 1)
+                {
+                    assentos[linha - 1][coluna - 1] = 0;
+                    printf("Reserva cancelada com sucesso!\n");
+                }
+                else
+                {
+                    printf("Esse assento ja esta vazio!\n");
+                    continue;
+                }
+            }
+            else
+            {
+                printf("Sessao ou assento invalido!\n");
+            }
+            reserva--;
         case 4:
             /* code */
             break;
